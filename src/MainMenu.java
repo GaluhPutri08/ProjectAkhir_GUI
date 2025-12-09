@@ -18,7 +18,7 @@ public class MainMenu {
         btn3.setBounds(70, 140, 200, 30);
         btn4.setBounds(70, 190, 200, 30);
 
-        btn1.addActionListener(e -> new FormMember());
+        btn1.addActionListener(e -> new FormRegistrasiMember());
         btn2.addActionListener(e -> new FormInstruktur());
         btn3.addActionListener(e -> new FormJadwalKelas());
         btn4.addActionListener(e -> new FormPendaftaran());
