@@ -143,8 +143,10 @@ public class FormRegisterMember {
                 loadTable(model);
 
             } catch (Exception ex) {
-                JOptionPane.showMessageDialog(frame, "Gagal menyimpan!");
-            }
+                JOptionPane.showMessageDialog(frame, 
+                 "Gagal menyimpan!\n" + ex.getMessage());
+                }
+
         });
 
         // ============================
