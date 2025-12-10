@@ -14,19 +14,19 @@ public class MainMenu {
         lblTitle.setBounds(0, 20, 400, 40);
         frame.add(lblTitle);
 
-        JButton btnMember = new JButton("Registrasi Member");
+        JButton btnMember = new JButton("Registrasi Member Gym");
         btnMember.setBounds(70, 80, 250, 40);
         frame.add(btnMember);
 
-        JButton btnInstruktur = new JButton("Data Instruktur");
+        JButton btnInstruktur = new JButton("Data Instruktur Gym");
         btnInstruktur.setBounds(70, 140, 250, 40);
         frame.add(btnInstruktur);
 
-        JButton btnJadwal = new JButton("Jadwal Kelas");
+        JButton btnJadwal = new JButton("Jadwal Kelas Gym");
         btnJadwal.setBounds(70, 200, 250, 40);
         frame.add(btnJadwal);
 
-        JButton btnDaftar = new JButton("Form Pendaftaran Kelas");
+        JButton btnDaftar = new JButton("Pendaftaran Kelas Gym");
         btnDaftar.setBounds(70, 260, 250, 40);
         frame.add(btnDaftar);
 
