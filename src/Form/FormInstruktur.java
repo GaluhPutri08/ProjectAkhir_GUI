@@ -18,7 +18,7 @@ public class FormInstruktur extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
 
-        JLabel lblNama = new JLabel("Nama:");
+        JLabel lblNama = new JLabel("Nama :");
         lblNama.setBounds(20, 20, 120, 25);
         add(lblNama);
 
@@ -26,7 +26,7 @@ public class FormInstruktur extends JFrame {
         txtNama.setBounds(150, 20, 150, 25);
         add(txtNama);
 
-        JLabel lblUsia = new JLabel("Usia:");
+        JLabel lblUsia = new JLabel("Usia :");
         lblUsia.setBounds(20, 60, 120, 25);
         add(lblUsia);
 
@@ -34,7 +34,7 @@ public class FormInstruktur extends JFrame {
         txtUsia.setBounds(150, 60, 150, 25);
         add(txtUsia);
 
-        JLabel lblKeahlian = new JLabel("Keahlian:");
+        JLabel lblKeahlian = new JLabel("Keahlian :");
         lblKeahlian.setBounds(20, 100, 120, 25);
         add(lblKeahlian);
 
@@ -42,7 +42,7 @@ public class FormInstruktur extends JFrame {
         txtKeahlian.setBounds(150, 100, 150, 25);
         add(txtKeahlian);
 
-        JLabel lblHp = new JLabel("No HP:");
+        JLabel lblHp = new JLabel("No HP :");
         lblHp.setBounds(20, 140, 120, 25);
         add(lblHp);
 
@@ -76,7 +76,7 @@ public class FormInstruktur extends JFrame {
         model.addColumn("No HP");
 
         JScrollPane sp = new JScrollPane(table);
-        sp.setBounds(320, 20, 450, 350);
+        sp.setBounds(20, 240, 750, 200);
         add(sp);
 
         loadData();
