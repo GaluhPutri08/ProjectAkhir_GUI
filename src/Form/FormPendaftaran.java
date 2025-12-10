@@ -2,27 +2,20 @@ package Form;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-//import java.awt.event.*;
 import java.sql.*;
-//import java.util.ArrayList;
 
 public class FormPendaftaran extends JFrame {
 
-    //private JComboBox<String> cbMember, cbKelas;
-    //private DefaultTableModel tableModel;
-    //private JTable table;
-
         public FormPendaftaran() {
 
-            
+                // tampilan form
                 setTitle("Form Pendaftaran Kelas Gym");
                 setSize(600, 500);
                 setLayout(null);
                 setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-                // ============================
+                
                 // Label dan Input Member
-                // ============================
                 JLabel lblMember = new JLabel("Member:");
                 lblMember.setBounds(20, 20, 120, 25);
                 add(lblMember);
@@ -31,9 +24,9 @@ public class FormPendaftaran extends JFrame {
                 cbMember.setBounds(150, 20, 200, 25);
                 add(cbMember);
 
-                // ============================
+                
                 // Label dan Input Kelas Gym
-                // ============================
+                
                 JLabel lblKelas = new JLabel("Kelas Gym:");
                 lblKelas.setBounds(20, 60, 120, 25);
                 add(lblKelas);
@@ -42,9 +35,9 @@ public class FormPendaftaran extends JFrame {
                 cbKelas.setBounds(150, 60, 200, 25);
                 add(cbKelas);
 
-                // ============================
+                
                 // Tanggal Daftar
-                // ============================
+                
                 JLabel lblTanggal = new JLabel("Tanggal Daftar:");
                 lblTanggal.setBounds(20, 100, 120, 25);
                 add(lblTanggal);
@@ -53,9 +46,9 @@ public class FormPendaftaran extends JFrame {
                 txtTanggal.setBounds(150, 100, 200, 25);
                 add(txtTanggal);
 
-                // ============================
+                
                 // Catatan
-                // ============================
+                
                 JLabel lblCatatan = new JLabel("Catatan:");
                 lblCatatan.setBounds(20, 140, 120, 25);
                 add(lblCatatan);
@@ -64,9 +57,8 @@ public class FormPendaftaran extends JFrame {
                 txtCatatan.setBounds(150, 140, 200, 25);
                 add(txtCatatan);
 
-                // =============================
+                
                 // TABEL DATA PENDAFTARAN
-                // =============================
                 DefaultTableModel model = new DefaultTableModel();
                 model.addColumn("ID");
                 model.addColumn("Member");
@@ -79,9 +71,8 @@ public class FormPendaftaran extends JFrame {
                 scroll.setBounds(20, 240, 540, 180);
                 add(scroll);
 
-                // ============================
+                
                 // Tombol Simpan
-                // ============================
                 JButton btnSimpan = new JButton("Simpan");
                 btnSimpan.setBounds(20, 190, 120, 30);
                 add(btnSimpan);
@@ -96,16 +87,13 @@ public class FormPendaftaran extends JFrame {
                 btnHapus.setBounds(300, 190, 120, 30);
                 add(btnHapus);
 
-                // ===================================================
-                //              KONEKSI DATABASE
-                // ===================================================
+                //KONEKSI DATABASE
                 String url = "jdbc:mysql://localhost:3306/gym_management";
                 String user = "root";
                 String pass = "";
 
-                // =============================
+                
                 // LOAD MEMBER KE COMBOBOX
-                // =============================
                 try (Connection conn = DriverManager.getConnection(url, user, pass)) {
                     ResultSet rs = conn.createStatement().executeQuery("SELECT id_member, nama FROM member_gym");
                     while (rs.next()) {
@@ -115,9 +103,8 @@ public class FormPendaftaran extends JFrame {
                     JOptionPane.showMessageDialog(this, "Gagal load member!");
                 }
 
-                // =============================
+
                 // LOAD KELAS KE COMBOBOX
-                // =============================
                 try (Connection conn = DriverManager.getConnection(url, user, pass)) {
                     ResultSet rs = conn.createStatement().executeQuery("SELECT id_kelas, nama_kelas FROM jadwal_kelas");
                     while (rs.next()) {
@@ -127,14 +114,10 @@ public class FormPendaftaran extends JFrame {
                     JOptionPane.showMessageDialog(this, "Gagal load kelas!");
                 }
 
-                // =============================
                 // LOAD TABEL PENDAFTARAN
-                // =============================
                 loadTable(model);
 
-                // ===================================================
-                //                  EVENT SIMPAN
-                // ===================================================
+                //EVENT SIMPAN
                 btnSimpan.addActionListener(e -> {
                     try {
                         int idMember = Integer.parseInt(cbMember.getSelectedItem().toString().split(" - ")[0]);
@@ -194,9 +177,7 @@ public class FormPendaftaran extends JFrame {
                 setVisible(true);
             }
 
-            // ===================================================
-            //        METHOD UNTUK LOAD TABEL DARI DB
-            // ===================================================
+            //METHOD UNTUK LOAD TABEL DARI DB
             static void loadTable(DefaultTableModel model) {
                 model.setRowCount(0);
 
