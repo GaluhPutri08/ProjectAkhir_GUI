@@ -1,9 +1,9 @@
 package Form;
 
-import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 import java.sql.*;
 import java.util.ArrayList;
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 public class FormJadwalKelas extends JFrame {
 
@@ -71,7 +71,7 @@ public class FormJadwalKelas extends JFrame {
         model.addColumn("Instruktur");
 
         JScrollPane sp = new JScrollPane(table);
-        sp.setBounds(370, 20, 500, 400);
+        sp.setBounds(20, 260, 750, 200);
         add(sp);
 
         loadInstruktur();
