@@ -125,6 +125,11 @@ public class FormPendaftaran extends JFrame {
                         String tanggal = txtTanggal.getText();
                         String catatan = txtCatatan.getText();
 
+                        if (catatan.trim().isEmpty()) {
+                        JOptionPane.showMessageDialog(this, "Catatan tidak boleh kosong!");
+                        return;
+                        }
+
                         Connection conn = DriverManager.getConnection(url, user, pass);
                         String sql = "INSERT INTO pendaftaran_kelas(id_member, id_kelas, tgl_daftar, catatan) VALUES (?, ?, ?, ?)";
                         PreparedStatement stmt = conn.prepareStatement(sql);
